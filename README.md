@@ -17,8 +17,8 @@ Space tourism multi-page website
 
 ### Links
 
-- Git URL: https://github.com/thusmiley/clipboard-landing-page.git
-- Live Site URL: https://thusmiley.github.io/clipboard-landing-page/
+- Git URL: https://github.com/thusmiley/space-tourism.git
+- Live Site URL: https://thusmiley.github.io/space-tourism/
 
 
 ### Built with
