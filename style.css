@@ -1,0 +1,717 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Orbitron&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #D0D6F9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Orbitron", sans-serif;
+  color: white;
+}
+
+p {
+  font-family: "Barlow", sans-serif;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.container {
+  padding-left: calc(8px + 1.5625vw);
+  padding-right: calc(8px + 1.5625vw);
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (min-width: 480px) {
+  .container {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding-top: 24px;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.icon-close, .icon-ham {
+  cursor: pointer;
+}
+
+.icon-close, nav, .icon-ham.active, .line {
+  display: none;
+}
+
+.icon-close.active, nav.active {
+  display: block;
+  z-index: 2;
+}
+
+.icon-close.active {
+  position: relative;
+}
+
+nav a {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2.7px;
+}
+
+nav span {
+  font-weight: bold;
+  margin-right: 11px;
+}
+
+.overlay-menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(22, 26, 36, 0.7);
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+
+nav.active {
+  position: absolute;
+  top: 100px;
+  left: 45%;
+  display: inline-block;
+  text-align: left;
+  animation: fade-in 3s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+nav.active a:not(:last-child) {
+  margin-bottom: 32px;
+  display: block;
+}
+
+@media only screen and (min-width: 650px) {
+  header {
+    padding-top: 0;
+  }
+  header .container {
+    padding-right: 0;
+    padding-left: 48px;
+  }
+  .icon-ham, nav span {
+    display: none;
+  }
+  nav {
+    display: block;
+    padding: 39px 48px;
+    background-color: rgba(255, 255, 255, 0.04);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+  }
+  nav a:not(:last-child) {
+    margin-right: 37px;
+  }
+  nav a {
+    padding-bottom: 36px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0);
+    transition: 0.3s ease;
+  }
+  nav a:hover {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+  }
+}
+@media only screen and (min-width: 1350px) {
+  header {
+    margin-top: 40px;
+    background: white;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 42%, rgba(255, 255, 255, 0.04) 40px, rgba(255, 255, 255, 0.04));
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+  }
+  header .container {
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    max-width: 1110px;
+  }
+  nav {
+    padding: 39px 0;
+    background-color: transparent;
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+  }
+  nav span {
+    display: inline;
+  }
+  nav a:not(:last-child) {
+    margin-right: 48px;
+  }
+  .logo {
+    position: absolute;
+    left: -100px;
+  }
+  .line {
+    display: block;
+    height: 1px;
+    background-color: #979797;
+    min-width: 473px;
+  }
+  .desktop-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
+#home, #destination, #crew, #tech {
+  min-height: 100vh;
+  padding-top: 112px;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+#home {
+  background-image: url("./assets/home/background-home-mobile.jpg");
+}
+
+#destination {
+  background-image: url("./assets/destination/background-destination-mobile.jpg");
+}
+
+#crew {
+  background-image: url("./assets/crew/background-crew-mobile.jpg");
+}
+
+#tech {
+  background-image: url("./assets/technology/background-technology-mobile.jpg");
+}
+
+#home h1 {
+  margin: 16px 0;
+  font-size: 68px;
+  line-height: 68px;
+}
+
+.tagline {
+  font-size: 16px;
+  letter-spacing: 2.7px;
+  color: #D0D6F9;
+}
+
+.tagline span {
+  opacity: 0.25;
+  margin-right: 18px;
+}
+
+#home .tagline {
+  color: #D0D6F9;
+}
+
+.intro {
+  margin-bottom: 150px;
+}
+
+#home a {
+  height: 150px;
+  width: 150px;
+  font-size: 20px;
+  letter-spacing: 1.25px;
+  color: #0B0D17;
+  background-color: white;
+  padding: 77px 30px;
+  border-radius: 50%;
+  font-family: "Orbitron", sans-serif;
+}
+
+#home a:hover {
+  box-shadow: -1px 1px 0px 50px #24262F;
+  transition: 0.3s ease-in-out;
+}
+
+.destination-content {
+  padding-bottom: 58px;
+}
+
+#hero-img {
+  width: 170px;
+  margin: 32px auto 26px auto;
+}
+
+.tab, .stat p {
+  color: #D0D6F9;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 14px;
+  letter-spacing: 2.36px;
+}
+
+.tab {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding-bottom: 12px;
+  border-bottom: 3px solid rgba(255, 255, 255, 0);
+  transition: 0.3s ease;
+}
+
+.tab:hover {
+  border-bottom: 2px solid #D0D6F9;
+}
+
+.tab:not(:last-child) {
+  margin-right: 26px;
+}
+
+#destination-title {
+  font-size: 56px;
+  margin-top: 20px;
+}
+
+#destination-intro {
+  margin: 1px auto 32px auto;
+  padding-bottom: 32px;
+  border-bottom: 2px solid #383B4B;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+#distance, #days {
+  text-transform: uppercase;
+  font-size: 28px;
+  margin-top: 12px;
+}
+
+#crew #hero-img {
+  margin-bottom: 0;
+}
+
+.crew-content {
+  border-top: 2px solid #383B4B;
+  padding-top: 32px;
+  padding-bottom: 104px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #979797;
+  border: none;
+  border-radius: 100px;
+  opacity: 0.17;
+  cursor: pointer;
+}
+
+.dot:hover {
+  opacity: 0.5;
+}
+
+.dot:not(:last-child) {
+  margin-right: 16px;
+}
+
+#crew-title {
+  margin: 32px 0 8px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 16px;
+  color: white;
+  opacity: 0.5;
+}
+
+#crew-name, #tech-name {
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+#tech #hero-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+}
+
+#tech #hero-img img {
+  padding-top: 32px;
+}
+
+.tech-content {
+  padding-bottom: 81px;
+}
+
+.nums {
+  margin: 48px 0 40px;
+}
+
+.num {
+  height: 40px;
+  width: 40px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.num:hover {
+  border: 1px solid white;
+}
+
+.num:not(:last-child) {
+  margin-right: 16px;
+}
+
+#tech-title {
+  font-size: 14px;
+  letter-spacing: 2.36px;
+}
+
+#tech-name {
+  margin-top: 9px;
+}
+
+@media only screen and (min-width: 480px) {
+  #home {
+    background-image: url("./assets/home/background-home-tablet.jpg");
+  }
+  #destination {
+    background-image: url("./assets/destination/background-destination-tablet.jpg");
+  }
+  #crew {
+    background-image: url("./assets/crew/background-crew-tablet.jpg");
+  }
+  #tech {
+    background-image: url("./assets/technology/background-technology-tablet.jpg");
+  }
+  #home {
+    padding-top: 202px;
+    padding-bottom: 150px;
+  }
+  #destination, #crew, #tech {
+    padding-top: 136px;
+  }
+  #destination-intro, #crew-intro, #tech-intro {
+    max-width: 62ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tagline {
+    font-size: 20px;
+    letter-spacing: 3.38px;
+  }
+  #home h1 {
+    margin: 24px 0;
+    font-size: 85px;
+    line-height: 85px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .intro {
+    max-width: 49ch;
+    margin: 0 auto 170px auto;
+  }
+  #destination .tagline, #crew .tagline, #tech .tagline {
+    text-align: left;
+    color: white;
+  }
+  .destination-content {
+    padding-bottom: 62px;
+  }
+  #hero-img {
+    width: 300px;
+    margin: 60px auto 53px auto;
+  }
+  .tab, .stat p {
+    font-size: 16px;
+    letter-spacing: 2.7px;
+  }
+  .tab:not(:last-child) {
+    margin-right: 35px;
+  }
+  #destination-title {
+    font-size: 80px;
+    margin-top: 32px;
+  }
+  #destination-intro {
+    margin: 8px auto 28px auto;
+    padding-bottom: 49px;
+  }
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 573px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stat:not(:last-child) {
+    margin-bottom: 0;
+  }
+  #crew {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 450px;
+  }
+  #crew #hero-img, .dots {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  #crew-title {
+    margin: 60px 0 8px;
+    font-size: 24px;
+  }
+  #crew-name, #tech-name {
+    font-size: 40px;
+  }
+  .crew-content {
+    position: relative;
+    border-top: none;
+    padding-bottom: 50px;
+    padding-top: 0;
+  }
+  .dots {
+    z-index: 3;
+  }
+  #tech {
+    padding-bottom: 97px;
+  }
+  #tech #hero-img img {
+    width: 100%;
+  }
+  .nums {
+    margin: 56px 0 44px;
+  }
+  #tech-title {
+    font-size: 16px;
+    letter-spacing: 2.7px;
+  }
+  #tech-name {
+    margin-top: 16px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #destination .tagline, #crew .tagline, #tech .tagline {
+    padding-left: 48px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #home {
+    background-image: url("./assets/home/background-home-desktop.jpg");
+  }
+  #destination {
+    background-image: url("./assets/destination/background-destination-desktop.jpg");
+  }
+  #crew {
+    background-image: url("./assets/crew/background-crew-desktop.jpg");
+  }
+  #tech {
+    background-image: url("./assets/technology/background-technology-desktop.jpg");
+  }
+  #home {
+    padding-top: 387px;
+    padding-bottom: 131px;
+  }
+  #home .container {
+    max-width: 1110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .home-content {
+    text-align: left;
+  }
+  #home a {
+    padding: 119px 62px;
+    width: 274px;
+    height: 274px;
+    font-size: 28px;
+  }
+  #home h1 {
+    font-size: 140px;
+    line-height: 140px;
+  }
+  .tagline {
+    font-size: 28px;
+    letter-spacing: 4.72px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .intro {
+    max-width: 57ch;
+    margin: 0;
+  }
+  #destination, #crew, #tech {
+    padding-top: 212px;
+  }
+  #destination .container, #crew .container, #tech .container {
+    max-width: 1110px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 600px;
+    position: relative;
+  }
+  #destination .tagline, #crew .tagline, #tech .tagline {
+    padding-left: 0;
+  }
+  #destination {
+    padding-bottom: 118px;
+  }
+  .destination-content {
+    text-align: left;
+    margin-top: 64px;
+    padding-bottom: 0;
+    width: 40%;
+    float: right;
+  }
+  #hero-img {
+    width: 445px;
+    margin: 0;
+  }
+  #destination #hero-img {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+  }
+  #destination-title {
+    font-size: 100px;
+    margin-top: 37px;
+  }
+  #destination-intro {
+    margin: 14px auto 28px auto;
+    padding-bottom: 54px;
+  }
+  .stats {
+    justify-content: flex-start;
+  }
+  .stat {
+    text-align: left;
+  }
+  .stat:not(:last-child) {
+    margin-right: 79px;
+  }
+  #crew {
+    padding-bottom: 0;
+    position: static;
+  }
+  #crew .container {
+    min-height: 650px;
+  }
+  #crew #hero-img {
+    left: 60%;
+    width: 500px;
+  }
+  .crew-content {
+    float: left;
+    text-align: left;
+    padding-bottom: 229px;
+    width: 50%;
+  }
+  #crew-title {
+    margin: 154px 0 15px;
+    font-size: 28px;
+  }
+  #crew-name, #tech-name {
+    font-size: 50px;
+    margin-bottom: 27px;
+  }
+  .dots {
+    bottom: 94px;
+  }
+  #tech {
+    padding-bottom: 101px;
+    overflow: hidden;
+  }
+  #tech #hero-img img {
+    max-width: 515px;
+    padding-top: 0;
+    position: absolute;
+    right: -17%;
+  }
+  .nums {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+  }
+  .num {
+    height: 80px;
+    width: 80px;
+    padding: 18px;
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
+  .num:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 32px;
+  }
+  #tech-title {
+    letter-spacing: 2px;
+  }
+  #tech-name {
+    margin-top: 16px;
+  }
+  .tech-content {
+    float: left;
+    text-align: left;
+    position: relative;
+    margin-top: 137px;
+    width: 63%;
+  }
+  #tech-title, #tech-name, #tech-intro {
+    margin-left: 160px;
+  }
+}/*# sourceMappingURL=style.css.map */

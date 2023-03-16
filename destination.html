@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Space tourism website" />
+    <meta name="keywords" content="HTML,CSS,JavaScript, API" />
+    <meta name="author" content="Thu Smiley" />
+    <meta property="og:image" content="./assets/preview.jpg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Destination | Space tourism website</title>
+  </head>
+  <body>
+    <!-- Header  -->
+    <header>
+      <div class="container">
+        <a class="logo" href="./index.html"
+          ><img src="./assets/shared/logo.svg" alt=""
+        /></a>
+        <div class="desktop-header-container">
+          <div class="line"></div>
+          <img
+            src="./assets/shared/icon-hamburger.svg"
+            alt=""
+            class="icon-ham"
+            onclick="openNav()"
+          />
+          <img
+            src="./assets/shared/icon-close.svg"
+            alt=""
+            class="icon-close"
+            onclick="closeNav()"
+          />
+          <nav class="nav-mobile">
+            <a href="./index.html"><span>00</span>HOME</a>
+            <a href="./destination.html"><span>01</span>DESTINATION</a>
+            <a href="./crew.html"><span>02</span>CREW</a>
+            <a href="./technology.html"><span>03</span>TECHNOLOGY</a>
+          </nav>
+          <div class="overlay-menu"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main  -->
+    <main>
+      <section id="destination">
+        <div class="container">
+          <p class="tagline"><span>01</span>PICK YOUR DESTINATION</p>
+          <img
+            id="hero-img"
+            src="./assets/destination/image-moon.webp"
+            alt="moon"
+          />
+
+          <!-- TAB MENU  -->
+          <div class="destination-content">
+            <div class="tabs">
+              <button class="tab">MOON</button>
+              <button class="tab">MARS</button>
+              <button class="tab">EUROPA</button>
+              <button class="tab">TITAN</button>
+            </div>
+
+            <!-- Destination info -->
+            <h1 id="destination-title">MOON</h1>
+            <p id="destination-intro">
+              See our planet as you’ve never seen it before. A perfect relaxing
+              trip away to help regain perspective and come back refreshed.
+              While you’re there, take in some history by visiting the Luna 2
+              and Apollo 11 landing sites.
+            </p>
+
+            <!-- Stats -->
+            <div class="stats">
+              <div class="stat">
+                <p>AVG. DISTANCE</p>
+                <h2 id="distance">384,400 km</h2>
+              </div>
+              <div class="stat">
+                <p>Est. travel time</p>
+                <h2 id="days">3 days</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>
