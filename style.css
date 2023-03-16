@@ -55,6 +55,7 @@ header {
   left: 0;
   right: 0;
   padding-top: 24px;
+  z-index: 2;
 }
 
 header .container {
@@ -223,6 +224,10 @@ nav.active a:not(:last-child) {
 
 #tech {
   background-image: url("./assets/technology/background-technology-mobile.jpg");
+}
+
+#home {
+  padding-bottom: 48px;
 }
 
 #home h1 {
