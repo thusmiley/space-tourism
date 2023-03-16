@@ -265,6 +265,7 @@ nav.active a:not(:last-child) {
   padding: 77px 30px;
   border-radius: 50%;
   font-family: "Orbitron", sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #home a:hover {
