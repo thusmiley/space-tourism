@@ -39,4 +39,4 @@ fetch("./data.json")
         crew.push(json.crew);
         technology.push(json.technology);
     });
-console.log(destinations["name"]);
+console.log(destinations[0][0].name);
