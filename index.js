@@ -1,3 +1,4 @@
+// Handle mobile menu
 const iconOpen = document.querySelector('.icon-ham');
 const iconClose = document.querySelector('.icon-close');
 const overlayMenu = document.querySelector('.overlay-menu');
@@ -17,3 +18,25 @@ function closeNav() {
     navMobile.classList.remove("active");
     overlayMenu.style.width = '0';
 }
+
+// Handle data updates
+// async function loadDefault() {
+    //   const response = await fetch("./data.json");
+    //   const data = await JSON.parse(response);
+    // //   data.push(...parsedReponse);
+    //   firstLoad();
+    //   console.log(data.destinations);
+    // }
+let destinations = [];
+let crew = [];
+let technology = [];
+fetch("./data.json")
+  .then((response) => response.json())
+//   .then((json) => data = json);
+    .then((json) => {
+        console.log(json)
+        destinations.push(json.destinations);
+        crew.push(json.crew);
+        technology.push(json.technology);
+    });
+console.log(destinations["name"]);
