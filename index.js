@@ -1,3 +1,19 @@
+//Parses and saves data    
+let destinations;
+let crew;
+let technology;
+fetch("data.json")
+  //Parses the json data
+  .then((response) => response.json())
+  //Saves the parsed data to the proper variables
+  .then((data) => {
+            destinations = data.destinations;
+            crew = data.crew;
+            technology = data.technology;
+            //Log for debugging purposes
+            console.log(data)
+  })
+
 // Handle mobile menu
 const iconOpen = document.querySelector('.icon-ham');
 const iconClose = document.querySelector('.icon-close');
@@ -20,23 +36,12 @@ function closeNav() {
 }
 
 // Handle data updates
-// async function loadDefault() {
-    //   const response = await fetch("./data.json");
-    //   const data = await JSON.parse(response);
-    // //   data.push(...parsedReponse);
-    //   firstLoad();
-    //   console.log(data.destinations);
-    // }
-let destinations = [];
-let crew = [];
-let technology = [];
-fetch("./data.json")
-  .then((response) => response.json())
-//   .then((json) => data = json);
-    .then((json) => {
-        console.log(json)
-        destinations.push(json.destinations);
-        crew.push(json.crew);
-        technology.push(json.technology);
-    });
-console.log(destinations[0][0].name);
+async function loadDefault() {
+      const response = await fetch("./data.json");
+      const data = await JSON.parse(response);
+    //   data.push(...parsedReponse);
+      firstLoad();
+      console.log(data.destinations);
+    }
+
+
