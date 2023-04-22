@@ -35,13 +35,4 @@ function closeNav() {
     overlayMenu.style.width = '0';
 }
 
-// Handle data updates
-async function loadDefault() {
-      const response = await fetch("./data.json");
-      const data = await JSON.parse(response);
-    //   data.push(...parsedReponse);
-      firstLoad();
-      console.log(data.destinations);
-    }
-
 
