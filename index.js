@@ -1,18 +1,33 @@
+//Write callbacks here for how to display data for each category (destinations, crew, technologies)
+//Each callback should take a single argument -data- which is the specific data object needed for it (i.e. {name: 'Moon', description:'...'})
+//To use, in each html page call getPageData(category, name, callback). For example: getPageData('destinations', 'Moon', displayDestinations)
+function displayDestinations(data){
+
+}
+
+function displayCrew(data){
+
+}
+
+function displayTechnology(data){
+
+}
+
 //Parses and saves data    
-let destinations;
-let crew;
-let technology;
-fetch("data.json")
+async function getPageData(category, name, callback){
+  fetch("data.json")
   //Parses the json data
   .then((response) => response.json())
-  //Saves the parsed data to the proper variables
+  //Calls the callback with the proper data
   .then((data) => {
-            destinations = data.destinations;
-            crew = data.crew;
-            technology = data.technology;
-            //Log for debugging purposes
-            console.log(data)
+      for(let item of data[category]){
+        if(item.name === name){
+          console.log(item)
+          callback(item.name);
+        }
+      }
   })
+}
 
 // Handle mobile menu
 const iconOpen = document.querySelector('.icon-ham');
@@ -34,14 +49,3 @@ function closeNav() {
     navMobile.classList.remove("active");
     overlayMenu.style.width = '0';
 }
-
-// Handle data updates
-async function loadDefault() {
-      const response = await fetch("./data.json");
-      const data = await JSON.parse(response);
-    //   data.push(...parsedReponse);
-      firstLoad();
-      console.log(data.destinations);
-    }
-
-
