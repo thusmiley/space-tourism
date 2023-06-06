@@ -27,22 +27,19 @@ function displayCrew(data) {
 
 const techName = document.getElementById("tech-name");
 const techIntro = document.getElementById("tech-intro");
-const techImg = document.getElementById("tech-img");
-
+const techImgWideScreen = document.getElementById("tech-img-wide-screen");
+const techImgNarrowScreen = document.getElementById("tech-img-narrow-screen");
 
 function displayTechnology(data) {
   techName.innerText = data.name;
   techIntro.innerText = data.description;
-  // techImg.src = data.images.portrait;
   //Handle screen resolutions of the images on Technology
-  window.onresize = function () {
-    if (window.innerWidth < 1200) {
-      techImg.setAttribute("src", data.images.portrait);
+    if (window.innerWidth > 1200) {
+      techImgWideScreen.setAttribute("srcset", data.images.portrait);
     } else {
-      techImg.setAttribute("src", data.images.landscape);
-      // image.setAttribute("src", "image.jpg");
+      techImgNarrowScreen.setAttribute("src", data.images.landscape);
     }
-  };
+  ;
 }
 
 //Parses and saves data
