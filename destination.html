@@ -39,7 +39,7 @@
           />
           <nav class="nav-mobile">
             <a href="./index.html"><span>00</span>HOME</a>
-            <a href="./destination.html"><span>01</span>DESTINATION</a>
+            <a href="./destination.html" onclick="getPageData('destinations', 'Moon', displayDestinations)"><span>01</span>DESTINATION</a>
             <a href="./crew.html"><span>02</span>CREW</a>
             <a href="./technology.html"><span>03</span>TECHNOLOGY</a>
           </nav>
@@ -54,7 +54,7 @@
         <div class="container">
           <p class="tagline"><span>01</span>PICK YOUR DESTINATION</p>
           <img
-            id="hero-img"
+            id="destination-img" class="hero-img"
             src="./assets/destination/image-moon.webp"
             alt="moon"
           />
@@ -62,10 +62,16 @@
           <!-- TAB MENU  -->
           <div class="destination-content">
             <div class="tabs">
-              <button class="tab">MOON</button>
-              <button class="tab">MARS</button>
-              <button class="tab">EUROPA</button>
-              <button class="tab">TITAN</button>
+              <button
+                class="tab"
+                id="moon"
+                onclick="getPageData('destinations', 'Moon', displayDestinations)"
+              >
+                MOON
+              </button>
+              <button class="tab" onclick="getPageData('destinations', 'Mars', displayDestinations)">MARS</button>
+              <button class="tab" id="europa" onclick="getPageData('destinations', 'Europa', displayDestinations)">EUROPA</button>
+              <button class="tab" id="titan" onclick="getPageData('destinations', 'Titan', displayDestinations)">TITAN</button>
             </div>
 
             <!-- Destination info -->
@@ -85,7 +91,7 @@
               </div>
               <div class="stat">
                 <p>Est. travel time</p>
-                <h2 id="days">3 days</h2>
+                <h2 id="travel">3 days</h2>
               </div>
             </div>
           </div>

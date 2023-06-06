@@ -54,20 +54,19 @@
         <div class="container">
           <p class="tagline"><span>02</span>MEET YOUR CREW</p>
           <img
-            id="hero-img"
+            id="crew-img" class="hero-img"
             src="./assets/crew/image-douglas-hurley.webp"
             alt="crew"
           />
-
+          
           <!-- TAB MENU  -->
           <div class="crew-content">
             <div class="dots">
-              <button class="dot"></button>
-              <button class="dot"></button>
-              <button class="dot"></button>
-              <button class="dot"></button>
+              <button class="dot" onclick="getPageData('crew', 'Douglas Hurley', displayCrew)"></button>
+              <button class="dot" onclick="getPageData('crew', 'Mark Shuttleworth', displayCrew)"></button>
+              <button class="dot" onclick="getPageData('crew', 'Victor Glover', displayCrew)"></button>
+              <button class="dot" onclick="getPageData('crew', 'Anousheh Ansari', displayCrew)"></button>
             </div>
-
             <!-- Destination info -->
             <p id="crew-title">COMMANDER</p>
             <h1 id="crew-name">Douglas Hurley</h1>
