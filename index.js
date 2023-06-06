@@ -33,13 +33,16 @@ const techImgNarrowScreen = document.getElementById("tech-img-narrow-screen");
 function displayTechnology(data) {
   techName.innerText = data.name;
   techIntro.innerText = data.description;
-  //Handle screen resolutions of the images on Technology
-    if (window.innerWidth > 1200) {
-      techImgWideScreen.setAttribute("srcset", data.images.portrait);
-    } else {
-      techImgNarrowScreen.setAttribute("src", data.images.landscape);
+    //Handle screen resolutions of the images on Technology
+    function selectTechImageSize(){
+      if (window.innerWidth > 1200) {
+        techImgWideScreen.setAttribute("srcset", data.images.portrait);
+      } else {
+        techImgNarrowScreen.setAttribute("src", data.images.landscape);
+      }
     }
-  ;
+    selectTechImageSize();
+    window.onresize = selectTechImageSize; 
 }
 
 //Parses and saves data
