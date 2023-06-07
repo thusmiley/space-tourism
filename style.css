@@ -129,6 +129,16 @@ nav.active a:not(:last-child) {
   display: block;
 }
 
+nav a {
+  padding-left: 20px;
+  border-left: 3px solid rgba(255, 255, 255, 0);
+  transition: 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+}
+
 @media only screen and (min-width: 650px) {
   header {
     padding-top: 0;
@@ -152,10 +162,13 @@ nav.active a:not(:last-child) {
   }
   nav a {
     padding-bottom: 36px;
+    padding-left: 0;
+    border-left: none;
     border-bottom: 3px solid rgba(255, 255, 255, 0);
     transition: 0.3s ease;
   }
-  nav a:hover {
+  nav a:hover, nav a.active {
+    border-left: none;
     border-bottom: 3px solid rgba(255, 255, 255, 0.5);
   }
 }
@@ -299,7 +312,7 @@ nav.active a:not(:last-child) {
   transition: 0.3s ease;
 }
 
-.tab:hover {
+.tab:hover, .tab.active {
   border-bottom: 2px solid #D0D6F9;
 }
 
@@ -352,7 +365,7 @@ nav.active a:not(:last-child) {
   cursor: pointer;
 }
 
-.dot:hover {
+.dot:hover, .dot.active {
   opacity: 0.5;
 }
 
@@ -374,23 +387,19 @@ nav.active a:not(:last-child) {
   margin-bottom: 16px;
 }
 
-#tech .hero-img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 50% 50%;
-     object-position: 50% 50%;
-}
-
-#tech .hero-img img {
-  padding-top: 32px;
-}
-
-.tech-content {
+#tech {
   padding-bottom: 81px;
 }
 
+#tech .hero-img {
+  position: absolute;
+  width: 100%;
+  top: 140px;
+  left: 0;
+}
+
 .nums {
-  margin: 48px 0 40px;
+  margin: 236px 0 40px;
 }
 
 .num {
@@ -408,7 +417,7 @@ nav.active a:not(:last-child) {
   cursor: pointer;
 }
 
-.num:hover {
+.num:hover, .num.active {
   border: 1px solid white;
 }
 
@@ -534,11 +543,14 @@ nav.active a:not(:last-child) {
   #tech {
     padding-bottom: 97px;
   }
+  #tech .hero-img {
+    top: 160px;
+  }
   #tech .hero-img img {
     width: 100%;
   }
   .nums {
-    margin: 56px 0 44px;
+    margin: 490px 0 44px;
   }
   #tech-title {
     font-size: 16px;
@@ -676,21 +688,21 @@ nav.active a:not(:last-child) {
     font-size: 28px;
   }
   #crew-name, #tech-name {
-    font-size: 50px;
+    font-size: 43px;
     margin-bottom: 27px;
   }
   .dots {
     bottom: 2px;
   }
   #tech {
-    padding-bottom: 101px;
+    padding-bottom: 100px;
     overflow: hidden;
   }
-  #tech .hero-img img {
+  #tech .hero-img {
     max-width: 515px;
-    padding-top: 0;
-    position: absolute;
-    right: -17%;
+    right: -15%;
+    top: 90px;
+    left: unset;
   }
   .nums {
     margin: 0;
@@ -720,7 +732,7 @@ nav.active a:not(:last-child) {
     text-align: left;
     position: relative;
     margin-top: 137px;
-    width: 63%;
+    width: 56%;
   }
   #tech-title, #tech-name, #tech-intro {
     margin-left: 160px;
