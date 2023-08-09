@@ -13,7 +13,7 @@ Space tourism multi-page website
 
 ### Screenshot
 
-![](./iassets/preview.jpg)
+![](./assets/preview.jpg)
 
 ### Links
 

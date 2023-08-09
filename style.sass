@@ -8,6 +8,7 @@ $gray: #D0D6F9
     padding: 0
 body
     color: $gray
+    scroll-behavior: smooth
 h1, h2, h3, h4, h5, h6
     font-family: 'Orbitron', sans-serif
     color: white 
@@ -60,6 +61,7 @@ nav a
     font-family: 'Barlow Condensed', sans-serif
     font-size: 16px
     letter-spacing: 2.7px
+    transition: 0.3s
 nav span 
     font-weight: bold
     margin-right: 11px
@@ -200,9 +202,16 @@ nav a:hover, nav a.active
     border-radius: 50%
     font-family: 'Orbitron', sans-serif
     -webkit-tap-highlight-color: transparent
+    transition: 0.3s ease-in-out
 #home a:hover 
     box-shadow: -1px 1px 0px 50px #24262F
-    transition: 0.3s ease-in-out
+.logo svg 
+    animation: spin 5s linear infinite
+@keyframes spin
+    from
+        transform: rotate(0deg)      
+    to
+        transform: rotate(360deg)       
 // DESTINATIONS
 .destination-content
     padding-bottom: 58px
@@ -220,7 +229,7 @@ nav a:hover, nav a.active
     cursor: pointer
     padding-bottom: 12px
     border-bottom: 3px solid rgba(255, 255, 255, 0)
-    transition: 0.3s ease
+    transition: 0.3s 
 .tab:hover, .tab.active
     border-bottom: 2px solid $gray
 .tab:not(:last-child)
@@ -250,13 +259,16 @@ nav a:hover, nav a.active
 .dot
     width: 10px
     height: 10px
-    background-color: #979797
+    background-color: white
     border: none
     border-radius: 100px
     opacity: 0.17
     cursor: pointer
-.dot:hover, .dot.active
+    transition: 0.3s
+.dot:hover
     opacity: 0.5
+.dot.active
+    opacity: 1
 .dot:not(:last-child)
     margin-right: 16px
 #crew-title
@@ -292,6 +304,7 @@ nav a:hover, nav a.active
     border: 1px solid rgba(255, 255, 255, 0.25)
     background-color: transparent
     cursor: pointer
+    transition: 0.3s
 .num:hover, .num.active
     border: 1px solid white 
 .num:not(:last-child)
@@ -500,7 +513,7 @@ nav a:hover, nav a.active
         font-size: 43px
         margin-bottom: 27px
     .dots
-        bottom: 2px
+        bottom: 40px
     // Desktop - TECH
     #tech
         padding-bottom: 100px
